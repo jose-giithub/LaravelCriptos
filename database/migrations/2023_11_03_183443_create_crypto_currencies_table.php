@@ -10,14 +10,19 @@ class CreateCryptoCurrenciesTable extends Migration
     {
         Schema::create('crypto_currencies', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('external_id')->unique();
             $table->string('name');
             $table->string('symbol');
-            $table->decimal('current_price', 10, 2);
-            $table->decimal('market_cap', 15, 2);
-            $table->decimal('supply', 15, 2);
-            $table->text('description');
-            $table->string('logo_url');
-            $table->string('website_link');
+            $table->string('slug');
+            $table->text('description')->nullable();
+            $table->text('logo')->nullable();
+            $table->json('urls')->nullable();
+            $table->date('date_added')->nullable();
+            $table->date('date_launched')->nullable();
+            $table->json('tags')->nullable();
+            $table->string('platform')->nullable();
+            $table->string('category')->nullable();
+            $table->boolean('infinite_supply')->default(false);
             $table->timestamps();
         });
     }
