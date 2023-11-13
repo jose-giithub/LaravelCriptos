@@ -8,23 +8,25 @@ class CreateCryptoCurrenciesTable extends Migration
 {
     public function up()
     {
+        //url del market cap //https://pro.coinmarketcap.com/account/
         Schema::create('crypto_currencies', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('external_id')->unique();
             $table->string('name');
             $table->string('symbol');
             $table->string('slug');
-            $table->text('description')->nullable();
-            $table->text('logo')->nullable();
-            $table->json('urls')->nullable();
-            $table->date('date_added')->nullable();
-            $table->date('date_launched')->nullable();
-            $table->json('tags')->nullable();
-            $table->string('platform')->nullable();
-            $table->string('category')->nullable();
+            $table->integer('cmc_rank')->nullable();
+            $table->integer('num_market_pairs')->nullable();
+            $table->bigInteger('circulating_supply')->nullable();
+            $table->bigInteger('total_supply')->nullable();
+            $table->bigInteger('max_supply')->nullable();
             $table->boolean('infinite_supply')->default(false);
             $table->timestamps();
+            $table->json('tags')->nullable();
+            $table->string('platform')->nullable();
+            // Agrega cualquier otro campo que necesites
         });
+        
     }
 
     public function down()
