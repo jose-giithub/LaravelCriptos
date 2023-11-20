@@ -21,8 +21,22 @@ class CreateCryptoCurrenciesTable extends Migration
             $table->bigInteger('total_supply')->nullable();
              $table->bigInteger('max_supply')->nullable();
              $table->boolean('infinite_supply')->default(false);
-        //     $table->string ('last_updated')->nullable();
-        //     $table->string ('date_added')->nullable();
+             $table->string ('last_updated')->nullable();
+       
+            $table->timestamps(); // Agrega created_at y updated_at
+        });
+        
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('crypto_currencies');
+    }
+}
+
+
+
+ //     $table->string ('date_added')->nullable();
         //    // $table->json('tags')->nullable();
         //     $table->string('platform')->nullable();
         //     $table->bigInteger('self_reported_circulating_supply')->nullable();
@@ -37,13 +51,3 @@ class CreateCryptoCurrenciesTable extends Migration
         //     $table->decimal('market_cap_dominance', 5, 2)->nullable();
         //     $table->decimal('fully_diluted_market_cap', 20, 2)->nullable();
         //     $table->string('last_updated_usd')->nullable();
-            $table->timestamps(); // Agrega created_at y updated_at
-        });
-        
-    }
-
-    public function down()
-    {
-        Schema::dropIfExists('crypto_currencies');
-    }
-}

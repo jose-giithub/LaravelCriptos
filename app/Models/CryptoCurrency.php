@@ -19,8 +19,13 @@ class CryptoCurrency extends Model
          'total_supply', 
          'max_supply', 
          'infinite_supply',
-        // 'last_updated',
-        // 'date_added',
+         'last_updated',
+       
+    ];
+    
+}
+
+ // 'date_added',
         // //'tags',
         // 'platform',  
         // 'self_reported_circulating_supply',
@@ -36,6 +41,3 @@ class CryptoCurrency extends Model
         // 'fully_diluted_market_cap',
         // 'last_updated_usd',
         // Agrega cualquier otro campo que hayas añadido
-    ];
-    
-}

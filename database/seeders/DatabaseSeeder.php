@@ -54,7 +54,15 @@ class DatabaseSeeder extends Seeder
                  'total_supply' => $cryptoData['total_supply'],
                  'max_supply' => $cryptoData['max_supply'],
                  'infinite_supply' => $cryptoData['infinite_supply'],
-                // 'last_updated' => $cryptoData['last_updated'],
+                 'last_updated' => isset($cryptoData['last_updated']) ? Carbon::parse($cryptoData['last_updated'])->format('Y-m-d H:i:s') : null,
+            
+            ]);
+        }
+    }
+}
+
+
+    // 'last_updated' => $cryptoData['last_updated'],
                 // 'date_added' => $cryptoData['date_added'],
                 // //'tags' => $cryptoData['tags'], // Asegúrate de que 'tags' sea un array
                 // 'platform' => $cryptoData['platform'],
@@ -72,7 +80,3 @@ class DatabaseSeeder extends Seeder
                 // 'last_updated_usd' => $cryptoData['quote']['USD']['last_updated'],
 
                 // Agrega cualquier otro campo que necesites
-            ]);
-        }
-    }
-}

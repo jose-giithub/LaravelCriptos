@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CryptoCurrencyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('indexCriptos');
-});
 
 
 
+Route::get('/', [CryptoCurrencyController::class, 'index']);

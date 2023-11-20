@@ -29,21 +29,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Puedes duplicar la siguiente fila para cada criptomoneda -->
+                @foreach ($cryptocurrencies as $crypto)
                 <tr>
-                    <td class="py-2 px-4 border-b border-gray-300">1</td>
-                    <td class="py-2 px-4 border-b border-gray-300">Bitcoin BTC</td>
-                    <td class="py-2 px-4 border-b border-gray-300">$34,102.20</td>
-                    <td class="py-2 px-4 border-b border-gray-300">+0.01%</td>
-                    <td class="py-2 px-4 border-b border-gray-300">-0.00%</td>
-                    <td class="py-2 px-4 border-b border-gray-300">-14.48%</td>
-                    <td class="py-2 px-4 border-b border-gray-300">$665,890,312,318</td>
-                    <td class="py-2 px-4 border-b border-gray-300">$14,172,931,547</td>
-                    <td class="py-2 px-4 border-b border-gray-300">19,526,318 BTC</td>
-                    <!-- El gráfico irá aquí. Utiliza la librería que elijas para generar y mostrar el gráfico en esta celda -->
-                    <td class="py-2 px-4 border-b border-gray-300"></td>
+                    <td class="py-2 px-4 border-b border-gray-300">{{ $crypto->cmc_rank }}</td>
+                    <td class="py-2 px-4 border-b border-gray-300">{{ $crypto->name }} {{ $crypto->symbol }}</td>
+                    <td class="py-2 px-4 border-b border-gray-300">${{ number_format($crypto->price, 2) }}</td>
+                    <!-- Añade más celdas según tus necesidades -->
                 </tr>
-                <!-- Fin de la fila de ejemplo -->
+                @endforeach
             </tbody>
         </table>
     </div>
