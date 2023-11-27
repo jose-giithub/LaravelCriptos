@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/', function () {
+    $cryptocurrencies = App\Models\Cryptocurrency::all(); // Obtiene todas las criptomonedas de tu base de datos
+    return view('cryptocurrencies', ['cryptocurrencies' => $cryptocurrencies]);
+});
