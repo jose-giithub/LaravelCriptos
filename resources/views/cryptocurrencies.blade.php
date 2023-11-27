@@ -2,8 +2,6 @@
 
 @section('content')
 
-<script src="{{ asset('js/app.js') }}"></script>
-
 <div class="container mx-auto mt-10 p-6 bg-white rounded shadow-md">
     <h1 class="text-2xl font-bold mb-5">Today's Cryptocurrency Prices by Market Cap</h1>
 

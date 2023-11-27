@@ -16,7 +16,7 @@ class CryptocurrencyController extends Controller
     public function updateUrlsFromAPI()
     {
         // Endpoint de CoinMarketCap
-        $endpoint = "URL_DE_LA_API";  // Reemplazar con la URL correcta de la API
+        $endpoint = "https://www.coingecko.com";  // Reemplazar con la URL correcta de la API
 
         // Obtener los datos de la API
         $response = Http::get($endpoint);
@@ -41,5 +41,12 @@ class CryptocurrencyController extends Controller
         }
 
         return response()->json(['error' => 'Failed to fetch data from API'], 500);
+    }
+
+    public function index()
+    {
+        // Aquí puedes recuperar todas las criptomonedas y devolverlas, por ejemplo
+        $cryptocurrencies = Cryptocurrency::all();
+        return view('index', ['cryptocurrencies' => $cryptocurrencies]);
     }
 }
