@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB; // Añade esta línea
 
 class CryptocurrencySeeder extends Seeder
 {

@@ -1,7 +1,4 @@
 <!-- resources/views/cryptocurrencies/index.blade.php -->
-
-@extends('layouts.app')
-
 @section('content')
 <h1>Cryptocurrencies</h1>
 
