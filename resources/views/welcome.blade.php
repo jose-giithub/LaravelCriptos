@@ -48,6 +48,10 @@
         </table>
     </div>
 
+    <!-- Incluye el script de app.js antes de cerrar la etiqueta </body> -->
+    <script src="{{ asset('resources/js/app.js') }}"></script>
+
+
 </body>
 
 </html>
